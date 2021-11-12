@@ -38,6 +38,31 @@ const StyledHeadingLink = styled.a`
 	color: #dce384;
 `;
 
+const StyledRightMenu = styled.div`
+	padding: 18px 0;
+	
+	&:not(:first-child) {
+		margin-left: auto;
+	}
+
+`;
+
+const StyledRightButton = styled.button`
+	padding: 10px;
+	font-size: 16px;
+	border: none;
+	background-color: #fff;
+`;
+
+const StyledRightLink = styled.a`
+	display: inline-block;
+	padding: 10px;
+
+	&:not(:first-child) {
+		margin-left: 10px;
+	}
+`;
+
 const Header = () => {
 	return (
 		<StyledMenuNav>
@@ -50,6 +75,10 @@ const Header = () => {
 				<StyledMenuLink href="#">게시판</StyledMenuLink>
 				<StyledMenuLink href="#">활동안내</StyledMenuLink>
 			</StyledContainer>
+			<StyledRightMenu>
+				<StyledRightButton>전체보기</StyledRightButton>
+				<StyledRightLink>로그인</StyledRightLink>
+			</StyledRightMenu>
 		</StyledMenuNav>
 	)
 };
