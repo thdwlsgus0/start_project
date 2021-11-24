@@ -1,6 +1,8 @@
 import React from 'react';
 import Header from './components/Header';
 import { createGlobalStyle } from 'styled-components';
+import { RecoilRoot, atom, selector, useRecoilState, useRecoilValue } from 'recoil';
+import CharacterCounter from './components/CharacterCounter';
 
 const GlobalStyle = createGlobalStyle`
   body {
@@ -20,10 +22,11 @@ const GlobalStyle = createGlobalStyle`
 
 const App = () => {
 	return (
-		<>
+		<RecoilRoot>
 			<GlobalStyle/>
 			<Header></Header>
-		</>
+			<CharacterCounter />
+		</RecoilRoot>
 	)
 }
 
