@@ -3,6 +3,7 @@ import Header from './components/Header';
 import { createGlobalStyle } from 'styled-components';
 import { RecoilRoot, atom, selector, useRecoilState, useRecoilValue } from 'recoil';
 import CharacterCounter from './components/CharacterCounter';
+import IntroduceSection from './components/IntroduceSection';
 
 const GlobalStyle = createGlobalStyle`
   body {
@@ -25,6 +26,7 @@ const App = () => {
 		<RecoilRoot>
 			<GlobalStyle/>
 			<Header></Header>
+			<IntroduceSection />
 			<CharacterCounter />
 		</RecoilRoot>
 	)
