@@ -7,7 +7,10 @@ module.exports = {
 	mode: 'development',
 	entry: ['@babel/polyfill', './src/index'],
 	resolve: {
-		extensions: ['.jsx', '.js']
+		extensions: ['.jsx', '.js'],
+		alias: {
+			'@images': path.resolve(__dirname, 'public/images')
+		}
 	},
 	devServer: {
 			contentBase: path.join(__dirname, 'dist'),
@@ -37,6 +40,19 @@ module.exports = {
 					use: ['style-loader', 'css-loader', 'sass-loader'],
 					exclude: /node_modules/,
 				},
+				{
+					test:/\.(woff|woff2|eot|ttf|otf|png|svg)$/,
+					use: [
+						  { 
+							  loader: 'url-loader',
+							  options: {
+								  publicPath: '/',
+								  name: '[name].[ext]?[hash]',
+								  limit: 10000
+							  }
+						  }
+					],
+				}
 			],
 		},
 	
